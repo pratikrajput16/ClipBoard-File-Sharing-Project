@@ -1,4 +1,6 @@
-# ⚡ FileBeam
+# ClipBoard
+
+
 
 > Secure local file & text transfer via 6-digit PIN. No cloud. No login. No trace.
 
@@ -86,22 +88,3 @@ netsh advfirewall firewall add rule name="FileBeam-Backend" dir=in action=allow 
 - Random filenames — files stored with UUID names
 
 ---
-
-## 🛠️ Tech Stack
-
-| Layer | Tech |
-|-------|------|
-| Frontend | React 18, Vite, React Router, Axios |
-| Backend | Node.js, Express, Multer, CORS |
-| Styling | CSS Modules, Geist + JetBrains Mono fonts |
-| Storage | Local disk (ephemeral) |
-
----
-
-## 💡 Resume Highlights
-
-- Built a **full-stack file & text transfer system** from scratch using React + Node.js
-- Designed a **one-time PIN authentication system** with expiry and auto-deletion
-- Implemented **real-time upload progress**, drag-and-drop, and live PIN validation
-- Created a **clean premium UI** with CSS Modules, custom typography, and animated canvas
-- Applied **local network security** — no cloud, no accounts, ephemeral storage
