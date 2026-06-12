@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 import styles from './ReceivePage.module.css'
 
-const API = import.meta.env.VITE_API_URL || ''
+const API = 'https://clipboard-8ia6.onrender.com'
 
 function formatSize(bytes) {
   if (bytes < 1024) return bytes + ' B'
