@@ -2,6 +2,8 @@ import { useState, useRef, useCallback } from 'react'
 import axios from 'axios'
 import styles from './SendPage.module.css'
 
+const API = import.meta.env.VITE_API_URL || ''
+
 function formatSize(bytes) {
   if (bytes < 1024) return bytes + ' B'
   if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB'
@@ -111,7 +113,7 @@ export default function SendPage() {
         if (!file) return setError('Please select a file.')
         const fd = new FormData()
         fd.append('file', file)
-        const res = await axios.post('/api/upload/file', fd, {
+        const res = await axios.post(`${API}/api/upload/file`, fd, ... {
           onUploadProgress: e => setProgress(Math.round((e.loaded / e.total) * 100))
         })
         data = res.data

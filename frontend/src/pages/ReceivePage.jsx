@@ -2,6 +2,8 @@ import { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 import styles from './ReceivePage.module.css'
 
+const API = import.meta.env.VITE_API_URL || ''
+
 function formatSize(bytes) {
   if (bytes < 1024) return bytes + ' B'
   if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB'
@@ -37,7 +39,7 @@ export default function ReceivePage() {
   const checkPin = async (p) => {
     try {
       setLoading(true); setStatus(null); setPreview(null)
-      const { data } = await axios.get(`/api/check/${p}`)
+      const { data } = await axios.get(`${API}/api/check/${p}`)
       setPreview(data)
     } catch (err) {
       setStatus({ type: 'error', msg: err.response?.data?.error || 'Invalid or expired PIN' })
