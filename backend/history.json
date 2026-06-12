@@ -1,0 +1,34 @@
+[
+  {
+    "id": "788fd829bcf1",
+    "pin": "931133",
+    "type": "text",
+    "preview": "Hey!!",
+    "length": 5,
+    "status": "expired",
+    "createdAt": 1781261753505,
+    "sentAt": null
+  },
+  {
+    "id": "8580b884b35c",
+    "pin": "548940",
+    "type": "file",
+    "filename": "IMG-20260610-WA0008.jpg",
+    "fileExtension": "JPG",
+    "mimeType": "image/jpeg",
+    "size": 35487,
+    "status": "received",
+    "createdAt": 1781164061705,
+    "sentAt": 1781164072619
+  },
+  {
+    "id": "ffcfb8faf0ad",
+    "pin": "826152",
+    "type": "text",
+    "preview": "Hey!",
+    "length": 4,
+    "status": "received",
+    "createdAt": 1781164016285,
+    "sentAt": 1781164029645
+  }
+]

@@ -1,0 +1,138 @@
+.page { width: 100%; }
+
+/* ─── Hero ─────────────────────────────────────── */
+.hero {
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; gap: 2rem;
+  max-width: 1100px; margin: 0 auto;
+  padding: 6rem 2rem 5rem;
+  min-height: calc(100vh - 60px);
+}
+
+.heroText { max-width: 520px; }
+
+.badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--border2); border-radius: 99px;
+  font-size: 0.75rem; font-weight: 500;
+  color: var(--text-2); margin-bottom: 1.75rem;
+  background: var(--surface); box-shadow: var(--shadow-sm);
+}
+
+.headline {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700; line-height: 1.12;
+  letter-spacing: -0.03em; margin-bottom: 1.25rem;
+  color: var(--text);
+}
+
+.accent {
+  background: linear-gradient(135deg, #4F46E5, #7C3AED);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+
+.sub {
+  font-size: 1rem; color: var(--text-2);
+  line-height: 1.7; margin-bottom: 2.5rem; max-width: 440px;
+}
+
+.cta { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+.btnPrimary {
+  display: inline-flex; align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--accent); color: #fff;
+  border-radius: var(--radius); font-weight: 600; font-size: 0.92rem;
+  transition: all 0.2s; box-shadow: 0 2px 12px rgba(79,70,229,0.3);
+}
+.btnPrimary:hover { background: #4338CA; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(79,70,229,0.35); }
+
+.btnSecondary {
+  display: inline-flex; align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--surface); color: var(--text);
+  border: 1px solid var(--border2); border-radius: var(--radius);
+  font-weight: 500; font-size: 0.92rem;
+  transition: all 0.2s; box-shadow: var(--shadow-sm);
+}
+.btnSecondary:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Canvas viz */
+.heroViz { position: relative; display: flex; flex-direction: column; align-items: center; }
+.canvas { width: 100%; max-width: 420px; aspect-ratio: 1; }
+.vizLabel {
+  display: flex; align-items: center; gap: 0.45rem;
+  font-size: 0.75rem; color: var(--text-3); margin-top: 0.5rem;
+}
+.vizDot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--success); box-shadow: 0 0 6px var(--success);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; } 50% { opacity: 0.4; }
+}
+
+/* ─── How it works ─────────────────────────────── */
+.howSection {
+  border-top: 1px solid var(--border);
+  padding: 5rem 2rem; max-width: 1100px; margin: 0 auto;
+}
+
+.sectionLabel {
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 2.5rem;
+}
+
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+
+.step {
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.step:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+
+.stepNum {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem; font-weight: 600;
+  color: var(--accent); margin-bottom: 0.75rem; letter-spacing: 0.05em;
+}
+.stepTitle { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text); }
+.stepDesc { font-size: 0.85rem; color: var(--text-2); line-height: 1.6; }
+
+/* ─── Features ─────────────────────────────────── */
+.featuresSection {
+  border-top: 1px solid var(--border);
+  padding: 5rem 2rem; max-width: 1100px; margin: 0 auto;
+}
+
+.featuresGrid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.featureCard {
+  padding: 1.5rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.featureCard:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+
+.featureIcon { font-size: 1.4rem; margin-bottom: 0.75rem; }
+.featureTitle { font-size: 0.92rem; font-weight: 600; margin-bottom: 0.35rem; color: var(--text); }
+.featureDesc { font-size: 0.82rem; color: var(--text-2); line-height: 1.6; }
+
+/* ─── Responsive ───────────────────────────────── */
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; padding: 3rem 1.25rem 4rem; min-height: auto; }
+  .heroViz { display: none; }
+  .steps { grid-template-columns: 1fr; }
+  .featuresGrid { grid-template-columns: 1fr; }
+}
