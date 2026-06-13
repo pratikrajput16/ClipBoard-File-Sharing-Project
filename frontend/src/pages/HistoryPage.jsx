@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from './HistoryPage.module.css'
 
+const API = 'https://clipboard-8ia6.onrender.com'
+
 function formatSize(bytes) {
   if (!bytes) return '—'
   if (bytes < 1024) return bytes + ' B'
@@ -53,7 +55,7 @@ export default function HistoryPage() {
 
   const fetchHistory = async () => {
     try {
-      const { data } = await axios.get('/api/history')
+      const { data } = await axios.get(`${API}/api/history`)
       setHistory(data)
     } catch (e) {
       console.error(e)
@@ -65,14 +67,14 @@ export default function HistoryPage() {
   useEffect(() => { fetchHistory() }, [])
 
   const deleteOne = async (id) => {
-    await axios.delete(`/api/history/${id}`)
+    await axios.delete(`${API}/api/history/${id}`)
     setHistory(h => h.filter(e => e.id !== id))
   }
 
   const clearAll = async () => {
     if (!confirmClear) { setConfirmClear(true); return }
     setClearing(true)
-    await axios.delete('/api/history')
+    await axios.delete(`${API}/api/history`)
     setHistory([])
     setClearing(false)
     setConfirmClear(false)

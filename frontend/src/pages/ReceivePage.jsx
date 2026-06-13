@@ -53,7 +53,7 @@ export default function ReceivePage() {
       setLoading(true); setStatus(null)
 
       if (preview?.type === 'text') {
-        const { data } = await axios.get(`/api/receive/${pin}`)
+        const { data } = await axios.get(`${API}/api/receive/${pin}`)
         setReceived(data)
         setPreview(null)
       } else {

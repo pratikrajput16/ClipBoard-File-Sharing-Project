@@ -113,13 +113,13 @@ export default function SendPage() {
         if (!file) return setError('Please select a file.')
         const fd = new FormData()
         fd.append('file', file)
-        const res = await axios.post(`${API}/api/upload/file`, fd, ... {
+        const res = await axios.post(`${API}/api/upload/file`, fd, {
           onUploadProgress: e => setProgress(Math.round((e.loaded / e.total) * 100))
         })
         data = res.data
       } else {
         if (!text.trim()) return setError('Please enter some text.')
-        const res = await axios.post('/api/upload/text', { text })
+        const res = await axios.post(`${API}/api/upload/text`, { text })
         data = res.data
       }
 
