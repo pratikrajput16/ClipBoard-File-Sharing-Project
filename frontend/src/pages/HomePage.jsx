@@ -109,11 +109,11 @@ function BeamCanvas() {
 
 const features = [
   { icon: '📁', title: 'File Transfer', desc: 'Send any file up to 100MB over your local network instantly.' },
-  { icon: '💬', title: 'Text Snippets', desc: 'Share code, links, notes, or any text with a 6-digit PIN.' },
+  { icon: '💬', title: 'Text Snippets', desc: 'Share code, links, notes or any text.' },
   { icon: '🔐', title: 'One-Time PIN', desc: 'Each transfer generates a unique PIN that expires after use.' },
   { icon: '⚡', title: 'Zero Cloud', desc: 'Everything stays on your local network. Nothing hits the internet.' },
-  { icon: '🗑️', title: 'Auto-Delete', desc: 'Files are wiped from the server immediately after download.' },
-  { icon: '📱', title: 'Cross-Device', desc: 'Works between any devices on the same Wi-Fi. No app needed.' },
+  { icon: '🗑️', title: 'Auto-Delete', desc: 'Files are wiped from the server in 10 minutes if not downloaded.' },
+  { icon: '📱', title: 'Cross-Device', desc: 'Works between any devices. No app needed.' },
 ]
 
 export default function HomePage() {
@@ -125,11 +125,11 @@ export default function HomePage() {
           <div className={styles.badge}>Local Network · Zero Cloud · Instant</div>
           <h1 className={styles.headline}>
             Transfer anything<br />
-            <span className={styles.accent}>without a trace.</span>
+            <span className={styles.accent}>without logging.</span>
           </h1>
           <p className={styles.sub}>
-            Send files and text from your phone to your PC using a 6-digit PIN.
-            No login. No internet. No storage. Just your local network.
+            Send files and text from your phone to your PC & vice-versa using a 6-digit PIN.
+            No login. No storage.
           </p>
           <div className={styles.cta}>
             <Link to="/send" className={styles.btnPrimary}>Start Sending →</Link>
@@ -150,9 +150,9 @@ export default function HomePage() {
         <div className={styles.sectionLabel}>How it works</div>
         <div className={styles.steps}>
           {[
-            { n: '01', title: 'Upload on mobile', desc: 'Open FileBeam on your phone and send a file or text.' },
+            { n: '01', title: 'Upload on mobile/PC', desc: 'Open ClipBoard on your device and send a file or text.' },
             { n: '02', title: 'Get your PIN', desc: 'A unique 6-digit PIN is generated instantly. No account needed.' },
-            { n: '03', title: 'Receive on PC', desc: 'Enter the PIN on your PC. Your content downloads and the PIN is gone.' },
+            { n: '03', title: 'Receive on PC/mobile', desc: 'Enter the PIN on your device. Your content downloads and the PIN is gone.' },
           ].map(s => (
             <div key={s.n} className={styles.step}>
               <div className={styles.stepNum}>{s.n}</div>

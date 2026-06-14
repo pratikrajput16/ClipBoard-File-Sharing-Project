@@ -24,7 +24,7 @@ export default function Layout({ children }) {
       </nav>
       <main className={styles.main}>{children}</main>
       <footer className={styles.footer}>
-        <span>FileBeam — Local network transfer · No cloud · No login</span>
+        <span>ClipBoard — Local network transfer · No cloud · No login</span>
       </footer>
     </div>
   )
